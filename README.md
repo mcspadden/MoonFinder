@@ -1,2 +1,2 @@
 # MoonFinder
-Reserves a seat on a rocket to the moon
+Reserves a first-class seat to the moon
