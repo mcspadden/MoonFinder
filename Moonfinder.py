@@ -1,8 +1,10 @@
-print('MoonFinder by RTL Technologies')
+# Moonfinder by McSpadden
+print('MoonFinder by McSpadden')
 print('Please wait while exceed the escape velocity of Earth...')
-import time
-time.sleep(1)
+import time # import time to make a mini delay
+time.sleep(1) # changes delay speed
 
+# Supported default Currencies
 answers = {"BTC": "\n BTC selected as default animal.", \
            "ETH": "\n ETH selected as default animal.", \
            "LTC": "\n LTC selected as default animal.", \
@@ -10,11 +12,13 @@ answers = {"BTC": "\n BTC selected as default animal.", \
            "GBP": "\n GBP selected as default animal.", \
            }
 
+# Seat selector
 ans = True
 while ans:
+    # print's the symbol for default currencies
     print('''\n
     BTC | ETH | LTC | USD | GBP
-    ''')
+    ''') 
     ans=input('What currency would you like to use?')
     if ans in answers:
         print(answers[ans])
