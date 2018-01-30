@@ -5,11 +5,11 @@ import time # import time to make a mini delay
 time.sleep(1) # changes delay speed
 
 # Supported default Currencies
-answers = {"BTC": "\n BTC selected as default animal.", \
-           "ETH": "\n ETH selected as default animal.", \
-           "LTC": "\n LTC selected as default animal.", \
-           "USD": "\n USD selected as default animal.", \
-           "GBP": "\n GBP selected as default animal.", \
+answers = {"BTC": "\n BTC selected as default currency.", \
+           "ETH": "\n ETH selected as default currency.", \
+           "LTC": "\n LTC selected as default currency.", \
+           "USD": "\n USD selected as default currency.", \
+           "GBP": "\n GBP selected as default currency.", \
            }
 
 # Seat selector
