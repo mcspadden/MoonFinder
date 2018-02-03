@@ -20,7 +20,7 @@ while ans:
     BTC | ETH | LTC | USD | GBP
     ''') 
     ans=input('What currency would you like to use?')
-    if ans in answers:
+    if ans in answers: # if input was a supported currency, continue below
         print(answers[ans])
 
         coinNames = []
@@ -36,5 +36,5 @@ while ans:
         for name in coinNames:
             print(' ' + name)
         break
-    else:
+    else: # if input was not a supported currency
         print('Not a supported currency at this time. Please verify the case matches and try again.')
