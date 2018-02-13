@@ -21,7 +21,7 @@ while ans:
     print('''\n
     BTC | ETH | LTC | USD | GBP
     ''')
-    ans=input('What currency would you like to use?').upper() #setting ans and .upper() makes input all uppercase
+    ans=input('What currency would you like to use?').upper() # setting ans and .upper() makes input all uppercase
     if ans in answers:
         print(answers[ans])
 
