@@ -1,10 +1,12 @@
-# Moonfinder by McSpadden
+# McSpadden
+
+
 print('MoonFinder by McSpadden')
 print('Please wait while exceed the escape velocity of Earth...')
-import time # import time to make a mini delay
+import time  # import time to make a mini delay
 time.sleep(1) # changes delay speed
 
-# Supported default Currencies
+# Supported currencies
 answers = {"BTC": "\n BTC selected as default currency.", \
            "ETH": "\n ETH selected as default currency.", \
            "LTC": "\n LTC selected as default currency.", \
@@ -12,14 +14,13 @@ answers = {"BTC": "\n BTC selected as default currency.", \
            "GBP": "\n GBP selected as default currency.", \
            }
 
-# Seat selector
+# Let user input their currency aka Seat Selector
 ans = True
-while ans:
-    # print's the symbol for default currencies
+while ans: # line below print's the symbol for default currencies
     print('''\n
     BTC | ETH | LTC | USD | GBP
-    ''') 
-    ans=input('What currency would you like to use?')
+    ''')
+    ans=input('What currency would you like to use?').upper() # setting ans and .upper() makes input all uppercase
     if ans in answers: # if input was a supported currency, continue below
         print(answers[ans])
 
@@ -37,4 +38,4 @@ while ans:
             print(' ' + name)
         break
     else: # if input was not a supported currency
-        print('Not a supported currency at this time. Please verify the case matches and try again.')
+        print('Not a supported currency at this time. Please try another currency.')
