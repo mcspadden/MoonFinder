@@ -43,13 +43,13 @@ while ans: # line below print's the symbol for default currencies
 coinA=input('What coin would you like to select?').upper()
 print('Please wait while your first class seat is being prepared.')
 # Request to get coin's history
-A1_Old = requests.get("http://coincap.io/history/LTC")
+A1_Old = requests.get(f"http://coincap.io/history/{coinA}")
 # Place JSON data as python var
 A1 = A1_Old.json()
 # Select the coins price on day 365
 A1_365 = (A1["price"][0][1])
 # Coin A still: Request to get coins data for today
-A2_Now = requests.get("http://coincap.io/page/LTC")
+A2_Now = requests.get(f"http://coincap.io/page/{coinA}")
 # Place JSON data as python var
 A2 = A2_Now.json()
 # Select the coins price in USD for today
