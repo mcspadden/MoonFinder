@@ -8,9 +8,10 @@ time.sleep(1) # changes delay speed
 # Supported currencies
 answers = {"BTC": "\n BTC selected as default currency.", \
            "ETH": "\n ETH selected as default currency.", \
-           "LTC": "\n LTC selected as default currency.", \
+           "EUR": "\n LTC selected as default currency.", \
            "USD": "\n USD selected as default currency.", \
-           "GBP": "\n GBP selected as default currency.", \
+           "LTC": "\n GBP selected as default currency.", \
+           "ZEC": "\n GBP selected as default currency.", \
            }
 
 # Let user input their currency aka Seat Selector
