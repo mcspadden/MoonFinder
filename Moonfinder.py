@@ -37,7 +37,7 @@ while ans: # line below print's the symbol for default currencies
                   ' (Or press Enter once you have added all you desire.):')
             name = input().upper()
             if name in cryptos: # verifying it is a real crypto
-                coinNames = coinNames + [name] # list concatenation
+                coinNames = coinNames + [name] # list connotation
                 continue
             elif name == '': # If user hits enter then it stops the input session
                 break
