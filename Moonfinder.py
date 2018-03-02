@@ -11,6 +11,7 @@ cryptos = requests.get("http://coincap.io/coins")  # getting current cryptos fro
 cryptos = cryptos.json()  # making the request.get in python var
 
 currencies  = requests.get("https://min-api.cryptocompare.com/data/all/coinlist")  # list of exchangable currencies
+currencies = currencies.json() # making the request.get in python var
 currencies = currencies["Data"]  # selecting the data header which has the currency list
 
 # Let user input their crypto aka Seat Selector
@@ -52,6 +53,10 @@ while ans:  # line below print's the symbol for default currencies
             break
         print('Please wait while your first class seat is being prepared.')
 
+        currency = requests.get(f"https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms={ans}")  # conversion
+        currency = currency.json()  # making the request.get python format
+        currency = currency[f"{ans}"] # selecting the exchange rate
+
         # Start of data requests
         # First crypto inputted = A1
         A1 = requests.get(f"http://coincap.io/history/{coinNames[0]}")  # Request to get coin's history
@@ -60,7 +65,7 @@ while ans:  # line below print's the symbol for default currencies
         A2 = requests.get(f"http://coincap.io/page/{coinNames[0]}")  # Coin A still: Request to get coins data for today
         A2 = A2.json()  # Place JSON data as python var
         A2 = (A2["price_usd"])  # Select the coins price in USD for today
-        AD = round((A2 - A1) / A1 * int("100"))  # Formula: Insert the formula here
+        AD = round((A2 - A1) / A1)  # Formula: Insert the formula here
 
         # Second crypto inputted = B1
         B1 = requests.get(f"http://coincap.io/history/{coinNames[1]}")  # Request to get coin's history
@@ -69,7 +74,7 @@ while ans:  # line below print's the symbol for default currencies
         B2 = requests.get(f"http://coincap.io/page/{coinNames[1]}")  # Coin A still: Request to get coins data for today
         B2 = B2.json()  # Place JSON data as python var
         B2 = (B2["price_usd"])  # Select the coins price in USD for today
-        BD = round((B2 - B1) / B1 * int("100"))  # Formula: Insert the formula here
+        BD = round((B2 - B1) / B1)  # Formula: Insert the formula here
 
         # Third crypto inputted = C1
         C1 = requests.get(f"http://coincap.io/history/{coinNames[2]}")  # Request to get coin's history
@@ -78,25 +83,25 @@ while ans:  # line below print's the symbol for default currencies
         C2 = requests.get(f"http://coincap.io/page/{coinNames[2]}")  # Coin c still: Request to get coins data for today
         C2 = C2.json()  # Place JSON data as python var
         C2 = (C2["price_usd"])  # Select the coins price in USD for today
-        CD = round((C2 - C1) / C1 * int("100"))  # Formula: Insert the formula here
+        CD = round((C2 - C1) / C1)  # Formula: Insert the formula here
 
 
         def winner():
             if AD > BD and AD > CD:  # Coin A is mooncoin
-                return(str(coinNames[0]) + ' is your mooncoin.' +
-                "\nPrice Today: $" + str(A2) +  # Creates var for Coin A's price difference in a percentage
-                "\nPrice 365 Days Ago: $" + str(A1) +  # remove after testing is finished
-                "\n" + str(coinNames[0]) + " gains: " + str(AD) + '%')  # Prints the percentage of gains for Coin A
+                return(str(coinNames[0]) + ' is your mooncoin.' + "\n" +
+                ans + " Price Today: " + str(round(A2/currency)) + "\n" +  # Creates var for Coin A's difference in a %
+                ans + " Price 365 Days Ago: " + str(round(A1/currency)) +  # remove after testing is finished
+                "\n" + str(coinNames[0]) + " gains: " + str(round((AD/currency) * int("100"))) + '%')  # Prints the % for Coin A
             if BD > AD and BD > CD:  # Coin B is mooncoin
-                return(str(coinNames[1]) + ' is your mooncoin.' +
-                "\nPrice Today: " + str(B2) +  # Creates var for Coin B's price difference in a percentage
-                "\nPrice 365 Days Ago: $" + str(B1) +  # remove after testing is finished
-                "\n" + str(coinNames[1]) + " gains: " + str(BD) + '%')  # Prints the percentage of gains for Coin B
+                return(str(coinNames[1]) + ' is your mooncoin.' + "\n" +
+                ans + " Price Today: " + str(round(B2/currency)) + "\n" +  # Creates var for Coin B's difference in a %
+                ans + " Price 365 Days Ago: " + str(round(B1/currency)) +  # remove after testing is finished
+                "\n" + str(coinNames[1]) + " gains: " + str(round((BD/currency) * int("100"))) + '%') # Prints the % for Coin B
             if CD > AD and  CD > BD:  # Coin C is mooncoin
-                return(str(coinNames[2]) + ' is your mooncoin.' +
-                "\nPrice Today: $" + str(C2) +  # Creates var for Coin C's price difference in a percentage
-                "\nPrice 365 Days Ago: $" + str(C1) +  # remove after testing is finished
-                "\n" + str(coinNames[2]) + " gains: " + str(CD) + '%')  # Prints the percentage of gains for Coin C
+                return(str(coinNames[2]) + ' is your mooncoin.' + "\n" +
+                ans + " Price Today: " + str(round(C2/currency)) + "\n" +  # Creates var for Coin C's difference in a %
+                ans + " Price 365 Days Ago: " + str(round(C1/currency)) +  # remove after testing is finished
+                "\n" + str(coinNames[2]) + " gains: " + str(round((CD/currency) * int("100"))) + '%')  # Prints the % for Coin C
 
         print(winner())
         break  # stops the loop
