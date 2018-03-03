@@ -65,7 +65,7 @@ while ans:  # line below print's the symbol for default currencies
         A2 = requests.get(f"http://coincap.io/page/{coinNames[0]}")  # Coin A still: Request to get coins data for today
         A2 = A2.json()  # Place JSON data as python var
         A2 = (A2["price_usd"])  # Select the coins price in USD for today
-        AD = round((A2 - A1) / A1)  # Formula: Insert the formula here
+        AD = round((A2 - A1) / A1)  # Formula: ((Price Today - Price 365 days ago) ÷ (Price 365 days ago))
 
         # Second crypto inputted = B1
         B1 = requests.get(f"http://coincap.io/history/{coinNames[1]}")  # Request to get coin's history
@@ -74,7 +74,7 @@ while ans:  # line below print's the symbol for default currencies
         B2 = requests.get(f"http://coincap.io/page/{coinNames[1]}")  # Coin A still: Request to get coins data for today
         B2 = B2.json()  # Place JSON data as python var
         B2 = (B2["price_usd"])  # Select the coins price in USD for today
-        BD = round((B2 - B1) / B1)  # Formula: Insert the formula here
+        BD = round((B2 - B1) / B1)  # Formula: ((Price Today - Price 365 days ago) ÷ (Price 365 days ago))
 
         # Third crypto inputted = C1
         C1 = requests.get(f"http://coincap.io/history/{coinNames[2]}")  # Request to get coin's history
@@ -83,7 +83,7 @@ while ans:  # line below print's the symbol for default currencies
         C2 = requests.get(f"http://coincap.io/page/{coinNames[2]}")  # Coin c still: Request to get coins data for today
         C2 = C2.json()  # Place JSON data as python var
         C2 = (C2["price_usd"])  # Select the coins price in USD for today
-        CD = round((C2 - C1) / C1)  # Formula: Insert the formula here
+        CD = round((C2 - C1) / C1)  # Formula: ((Price Today - Price 365 days ago) ÷ (Price 365 days ago))
 
 
         def winner():
