@@ -44,7 +44,7 @@ ETH:
 # Notes 
 
 **Rounding**  
-Only the printed answer is rounded. In the above example, **1131%** would be printed for **ETH**. Say you choose coin _ABC_ and _XYZ_. _ABC_ has a percentage of **834.52** and _XYZ_ has a percentage of **834.78**. If both got printed, they would look identical at **835%**. _XYZ_ would be selected as your mooncoin although because the mooncoin is selected _**before**_ the number is turned into a percentage. See function `winner()` to see exactly how this occurs. 
+Only the printed answer is rounded. In the above example, **1131%** would be printed for **ETH**. Say you choose coin _ABC_ and _XYZ_. _ABC_ has a percentage of **834.52** and _XYZ_ has a percentage of **834.78**. If both got printed, they would look identical at **835%**. _XYZ_ would be selected as your mooncoin although because the mooncoin is selected _**before**_ the number is rounded. See function `winner()` to see exactly how this occurs. 
 
 **Exchange Rates**  
 Always take into consideration the real time exchange rate. Since cryptos are consistently fluctuating in very high values, the cost 365 days ago in `x` crypto is almost guaranteed to be inaccurate. Using BTC as an example, the exchange rate from USD to BTC was not **0.00008802** 365 days ago. Therefore, the ETH price of **65** 365 days ago is not equal to **0.0057213** BTC 365 days ago. The ETH price of **65** 365 days ago is equal to **0.0057213** BTC today. I may resolve this later but it could cause confusion.  
