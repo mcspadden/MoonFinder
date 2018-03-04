@@ -2,6 +2,37 @@
 Reserves a first-class seat to the moon
 
 The name MoonFinder comes from the popular ideology that BTC and/or cryptos as a whole will take the crypto community to the moon. While some cryptos may be literally building a rocket to take us there, most are using the term moon as the cash out point. MoonFinder pulls user chosen data from CoinCap.io (limited to them as of now) and selects the best (numerical) coin to purchase. This is solely based off the coins gains (or losses) in the last 365 days and does **not** indicate a profit and/or loss will be made. See the MIT license below for the state of which MoonFinder is provided. 
+
+# Prerequisites
+
+You will need python 3 installed to run MoonFinder. Open up a CLI terminal then type `python -v` to see the current version installed. Go [here](https://docs.python.org/3/using/index.html "Python 3 documentation") for more information.
+
+# Installing and Utilizing MoonFinder
+**Linux**
+ * To install MoonFinder, go to the main github page [here](https://github.com/mcspadden/MoonFinder "MoonFinder"). 
+ * _Click_ **_Clone or Download_** > **_Download ZIP_**
+ * _Navigate_ to the download location, _double-click_ the zip file to unzip it
+ * Open up a **CLI terminal** > _Change_ the directory to the download location
+   * **Example**: `cd /home/user/Downloads/MoonFinder-Master`
+ * Type the following commands:
+  ```
+  chmod +x MoonFinder.py  
+  python3 ./MoonFinder.py
+  ```
+Moonfinder is now successfully running. 
+ 
+# Instructions
+
+Once you start MoonFinder and see `What currency would you like to view the results in? (Type the symbol like BTC or USD) `, type in a default currency symbol and click _**Enter**_. It is not case sensitive and it can be just about any currency in the world (fiat and cryptocurrencies are supported). Examples would be BTC, USD, EUR, JPY, LTC, ETH, DOP, QAR, and there are thousands more. This will select your default currency.  
+
+The following three enteries are the specific seat you are thinking about sitting in when you get your lambo (aka a cryptocurrency). Type in three cryptocurrency symbols and those seats (cryptos) will be used to find your mooncoin.  
+
+Your mooncoin will then be printed with some basic information.  
+
+# Use Cases
+
+If you have $100 and are looking to buy cryptocurrencies with it, what coin do you choose? Should you choose multiple and diversify your portfolio? Should you choose one and go for the moon? Say you have narrowed down your results to three prospective coins and are unsure of where to go from there. Simply enter all three coins into MoonFinder and it’ll choose the best numerical coin for the last year. You could then invest all $100 in it or $60/$20/$20 or however you desire.  
+
 # APIs
 
 **Coincap.io**
